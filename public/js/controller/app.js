@@ -1,4 +1,4 @@
-window.FlowersApp = angular.module('FlowersApp', []);
+window.FlowersApp = angular.module('FlowersApp', ['ngRoute']);
 
 FlowersApp.controller("FlowersController", function ($scope) {
     $scope.flowers = [
@@ -15,6 +15,7 @@ FlowersApp.controller("FlowersController", function ($scope) {
             "ending_on":"2500-01-01",
             "slug":"the-viola",
             "lily_free":false,
+            "price":"£45",
             "thumb": "https://res.cloudinary.com/bloomandwild/image/upload/s--48E66Z2d--/t_product_box_website_main.lossless_compression/v1416578534/wqgrt0fe04mzmfx2h8zp.jpg"
         },
         {
@@ -30,6 +31,7 @@ FlowersApp.controller("FlowersController", function ($scope) {
             "ending_on":"2500-01-01",
             "slug":"the-lucy",
             "lily_free":false,
+            "price":"£35",
             "thumb": "https://res.cloudinary.com/bloomandwild/image/upload/s--kU6OTH4s--/t_product_box_website_main.lossless_compression/v1417198974/rfw4n13cdkkkmpy9gm22.jpg"
         },
         {
@@ -45,7 +47,13 @@ FlowersApp.controller("FlowersController", function ($scope) {
             "ending_on":"2500-01-01",
             "slug":"the-beatrix",
             "lily_free":false,
+            "price":"£27",
             "thumb": "https://res.cloudinary.com/bloomandwild/image/upload/s--U38TxnZw--/t_product_box_website_main.lossless_compression/v1417199030/vic4oblscftagpfgtoqg.jpg"
         }
     ];
-});
+
+    });
+    FlowersApp.controller("FlowerDetailsController", function ($scope, $routeParams) {
+        $scope.getFlowerById($routeParams.id);
+    });
+

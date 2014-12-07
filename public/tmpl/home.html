@@ -1,0 +1,13 @@
+<input type="text" placeholder="Search Flowers" class="form-control" data-ng-model="search">
+ 
+<div class="">
+    <div class="row flowers-list">
+        <div class="col-md-4" data-ng-repeat="flower in flowers | orderBy:'name':true | filter:search">
+            <h2>{{flower.name + "-" + flower.price | uppercase}}</h2>
+            <p>
+                <img data-ng-src="{{flower.thumb}}" class="thumb-big">
+                <a href="#" class="btn btn-success " role="button ">Order »</a>
+            </p>
+        </div>
+    </div>
+</div>
