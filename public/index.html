@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="">
+<html data-ng-app="FlowersApp">
 <head>
 	<title>Flowers App</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -7,8 +7,14 @@
 	<script type="text/javascript" src="js/lib/angular.min.js"></script>
 	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
 	<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/controller/app.js"></script>
 </head>
-<body class="container">
+<body class="container" data-ng-controller="FlowersController">
 	<h1>Flowers App</h1>
+	<ul>
+        <li data-ng-repeat="flower in flowers">
+            {{flower.id}} - {{flower.name}}
+        </li>
+    </ul>
 </body>
 </html>
